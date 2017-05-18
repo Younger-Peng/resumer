@@ -5,6 +5,7 @@
   "author": "plearner <953413537@qq.com>",
   "private": true,
   "scripts": {
+    "pc": "proxychains4 -f ~/.proxychains.conf",
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
