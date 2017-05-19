@@ -22,7 +22,7 @@ export default {
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
     .wrapper{
       min-width: 1024px;
-      min-width: 1440px;
+      max-width: 1440px;
       margin: 0 auto;
       height: 64px;
     }
