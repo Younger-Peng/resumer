@@ -8,24 +8,37 @@ export default new Vuex.Store({
     resume: {
       config: [
         { field: 'profile', icon: 'id' },
-        { field: 'work history', icon: 'work' },
+        { field: 'workHistory', icon: 'work' },
         { field: 'education', icon: 'book' },
         { field: 'projects', icon: 'heart' },
         { field: 'awards', icon: 'cup' },
         { field: 'contacts', icon: 'phone' },
       ],
       profile: {
-        name: '',
-        city: '',
-        title: ''
+        name: '彭某某',
+        city: '城乡结合部',
+        title: '杀马特发型师',
+        birthday: '1989-11-26'
       },
-      'work history': [
-        {company: 'AL',content: '我的第二份工作是'},
-        {company: 'TX',content: '我的第一份工作是'}
+      workHistory: [
+        {
+          company: '国家施工队射鸡尸',
+          content: `公司总部设在美国洛杉矶，先后在北京、上海成立分公司，专注于搬砖码墙，主打刮墙，
+                    我的主要工作如下：
+                      1. 完成混凝土搅拌
+                      2. 码墙，勾缝`
+        },
+        {
+          company: '狗急跳墙责任有限公司',
+          content: `公司总部设在美国洛杉矶，先后在北京、上海成立分公司，专注于搬砖码墙，主打刮墙，
+                    我的主要工作如下：
+                      1. 完成混凝土搅拌
+                      2. 码墙，勾缝`
+        }
       ],
       education: [
-        { school: 'AL', content: '文字' },
-        { school: 'TX', content: '文字' }
+        { school: '华北野鸡大学', content: '本科' },
+        { school: '沙发特高中', content: '一个打仨' }
       ],
       projects: [
         { name: 'project A', content: '文字' },

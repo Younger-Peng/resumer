@@ -49,7 +49,7 @@
       width: 100%;
       align-self: center;
       #resumeEditor{
-        width: 35%;
+        min-width: 35%;
         
       }
       #resumePreview{
