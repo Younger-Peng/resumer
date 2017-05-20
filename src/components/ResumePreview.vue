@@ -11,6 +11,15 @@
         <small>{{resume.profile.birthday}}</small>
       </p>
     </section>
+    <section data-name="projects" v-show="resume.projects">
+      <h2>项目经历</h2>
+      <ol>
+        <li v-for="item in resume.projects">
+          <h3>{{item.name}}</h3>
+          <p v-show="item.content"> {{item.content}} </p>
+        </li>
+      </ol>
+    </section>
     <section data-name="workHistory" v-show="resume.workHistory">
       <h2>工作经历</h2>
       <ol>
@@ -31,6 +40,25 @@
         </li>
       </ol>
     </section>
+    <section data-name="awards" v-show="resume.awards">
+      <h2>获奖情况</h2>
+      <ol>
+        <li v-for="item in resume.awards">
+          <h3>{{item.name}}</h3>
+          <p v-show="item.content"> {{item.content}}</p>
+        </li>
+      </ol>
+    </section>
+    <section data-name="contacts" v-show="resume.contacts">
+      <h2>联系方式</h2>
+      <table>
+        <tr v-for="item in resume.contacts">
+          <td> {{item.contact}} </td>
+          <td v-show="item.content"> {{item.content}} </td>
+        </tr>
+      </table>
+    </section>
+    
 
   </div>
 </template>
@@ -42,9 +70,6 @@ export default {
     resume(){
       return this.$store.state.resume
     }
-  },
-  created(){
-    console.log(this.resume)
   }
 }
 </script>
@@ -55,6 +80,7 @@ export default {
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
     padding: 2em;
     color: #333;
+    overflow: auto;
     line-height: 1.2;
     * {
       box-sizing: border-box;
@@ -84,7 +110,9 @@ export default {
         font-size: 4em;
       }
     }
-    section[data-name="workHistory"]{
+    section[data-name="workHistory"],
+    section[data-name="projects"],
+    section[data-name="awards"]{
       li + li {
         margin-top: 1em;
       }
@@ -96,9 +124,9 @@ export default {
         }
       }
     }
-    section[data-name="education"]{
-      li {
-        line-height: 1.5;
+    section[data-name="contacts"]{
+      td:first{
+        padding-right: 1em;
       }
     }
   }
