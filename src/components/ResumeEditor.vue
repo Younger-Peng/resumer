@@ -119,7 +119,7 @@
     list-style: none;
   }
   .resumeField{
-    > lavel {
+    > label {
       display: block;
     }
     input[type=text]{
