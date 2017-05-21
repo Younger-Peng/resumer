@@ -34,7 +34,6 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
   }
   .dialog{
       background: white;
