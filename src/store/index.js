@@ -74,7 +74,7 @@ export default new Vuex.Store({
     setUser(state, payload){
       Object.assign(state.user, payload)
     },
-    remoteUser(state){
+    removeUser(state){
       state.user.id = null
     }
   }
