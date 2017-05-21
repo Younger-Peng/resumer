@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" v-show="visible">
+  <div class="wrapper-dia" v-show="visible">
     <div class="dialog">
       <header>{{title}}
         <span class="close" @click="close" >x</span>
@@ -23,14 +23,14 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-  .wrapper{
+  .wrapper-dia{
     position: fixed;
     background: hsla(0,0%,0%,0.25);
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 1;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
