@@ -1,12 +1,14 @@
 <template>
-  <div class="page">
-    <header>
-      <Topbar/>
-    </header>
-    <main>
-      <ResumeEditor/>
-      <ResumePreview/>
-    </main>
+  <div>
+    <div class="page">
+      <header>
+        <Topbar/>
+      </header>
+      <main>
+        <ResumeEditor/>
+        <ResumePreview/>
+      </main>
+  </div>
   </div>
 </template>
 
@@ -25,6 +27,11 @@
     components: { Topbar, ResumeEditor, ResumePreview },
     created(){
       document.body.insertAdjacentHTML('afterbegin', icons)
+      let state = localStorage.getItem('state')
+      if(state){
+        state = JSON.parse(state)
+      }
+      this.$store.commit('initState', state)
     }
   }
 </script>
@@ -41,16 +48,15 @@
     >main{
       min-width: 1024px;
       max-width: 1440px;
+      width: 100%;
       margin-top: 16px;
       margin-bottom: 16px;
       display: flex;
       justify-content: space-between;
       padding: 0 16px;
-      width: 100%;
       align-self: center;
       #resumeEditor{
         min-width: 35%;
-        
       }
       #resumePreview{
         flex-grow: 1;
