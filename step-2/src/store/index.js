@@ -1,6 +1,8 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
 import objectPath from 'object-path'
+import AV from '../lib/leancloud'
+import getAVUser from '../lib/getAVUser'
 
 Vue.use(Vuex)
 export default new Vuex.Store({
@@ -54,6 +56,38 @@ export default new Vuex.Store({
       state.resumeConfig.filter((i) => i.field === field)[0].keys.map((key) => {
         Vue.set(empty, key, '')
       })
+    },
+    setResumeId(state, {id}){
+      state.resume.id = id
+    }
+  },
+  actions: {
+    saveResume({ state, commit }, payload){
+      var Resume = AV.Object.extend('Resume')
+      if(state.resume.id){
+
+      }else {
+
+        var resume = new Resume()
+        resume.set('profile', state.resume.profile)
+        resume.set('workHistory', state.resume.workHistory)
+        resume.set('education', state.resume.education)
+        resume.set('projects', state.resume.projects)
+        resume.set('awards', state.resume.awards)
+        resume.set('contacts', state.resume.contacts)
+        resume.set('owner_id', getAVUser().id)
+
+        var acl = new AV.ACL()
+        acl.setPublicReadAccess(true)
+        acl.setWriteAccess(AV.User.current(), true)
+
+        resume.setACL(acl)
+        resume.save().then(function(response){
+          commit('setResumeId', {id: response.id})
+        }).catch(function(error){
+          console.log(error)
+        })
+      }
     }
   }
 })
