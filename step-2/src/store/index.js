@@ -12,45 +12,19 @@ export default new Vuex.Store({
     },
     resume: {
       config: [
-        { field: 'profile', icon: 'id' },
-        { field: 'workHistory', icon: 'work' },
-        { field: 'education', icon: 'book' },
-        { field: 'projects', icon: 'heart' },
-        { field: 'awards', icon: 'cup' },
-        { field: 'contacts', icon: 'phone' },
+        { field: 'profile', icon: 'id', keys: ['name', 'city', 'title', 'birthday'] },
+        { field: 'workHistory', icon: 'work', keys: ['company', 'details']  },
+        { field: 'education', icon: 'book', keys: ['school', 'details'] },
+        { field: 'projects', icon: 'heart', keys: ['name', 'details'] },
+        { field: 'awards', icon: 'cup', keys: ['name', 'details'] },
+        { field: 'contacts', icon: 'phone', keys: ['contact', 'content'] },
       ],
-      profile: {
-        name: '',
-        city: '',
-        title: '',
-        birthday: ''
-      },
-      workHistory: [
-        {
-          company: '',
-          content: ``
-        },
-        {
-          company: '',
-          content: ``
-        }
-      ],
-      education: [
-        { school: '', content: '' },
-        { school: '', content: '' }
-      ],
-      projects: [
-        { name: '', content: '' },
-        { name: '', content: '' }
-      ],
-      awards: [
-        { name: '', content: '' },
-        { name: '', content: '' }
-      ],
-      contacts: [
-        { contact: '', content: ''},
-        { contact: '', content: ''}
-      ]
+      profile: { },
+      workHistory: [ ],
+      education: [ ],
+      projects: [ ],
+      awards: [ ],
+      contacts: [ ]
     },
   },
   mutations: {
