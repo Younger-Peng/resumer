@@ -34,7 +34,6 @@
         state = JSON.parse(state)
       }
       this.$store.commit('initState', {})
-      console.log('initState')
       this.$store.commit('setUser', getAVUser())
     }
   }
@@ -76,7 +75,35 @@
     vertical-align: -0.1em;
     font-size: 16px;
   }
-  
+  .button{
+    width: 72px;
+    height: 32px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    background: #ddd;
+    color: #222;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    &:hover{
+      box-shadow: 1px 1px 1px hsla(0,0,0,0.5)
+    }
+    &.primary{
+      background: #02af5f;
+      color: white;
+    }
+    .actions{
+      display: flex;
+      .userActions{
+        .welcome{
+          margin-right: 0.5em;
+        }
+      }
+    }
+  }
   
   
 </style>
