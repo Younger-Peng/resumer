@@ -34,6 +34,7 @@
         state = JSON.parse(state)
       }
       this.$store.commit('initState', {})
+      console.log('initState')
       this.$store.commit('setUser', getAVUser())
     }
   }

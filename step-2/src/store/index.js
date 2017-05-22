@@ -12,11 +12,11 @@ export default new Vuex.Store({
     },
     resumeConfig: [
       { field: 'profile', icon: 'id', keys: ['name', 'city', 'title', 'birthday'] },
-      { field: 'workHistory', icon: 'work', keys: ['company', 'details']  },
-      { field: 'education', icon: 'book', keys: ['school', 'details'] },
-      { field: 'projects', icon: 'heart', keys: ['name', 'details'] },
-      { field: 'awards', icon: 'cup', keys: ['name', 'details'] },
-      { field: 'contacts', icon: 'phone', keys: ['contact', 'content'] },
+      { field: 'workHistory', icon: 'work', type: 'array', keys: ['company', 'details']  },
+      { field: 'education', icon: 'book', type: 'array', keys: ['school', 'details'] },
+      { field: 'projects', icon: 'heart', type: 'array', keys: ['name', 'details'] },
+      { field: 'awards', icon: 'cup', type: 'array', keys: ['name', 'details'] },
+      { field: 'contacts', icon: 'phone', type: 'array', keys: ['contact', 'content'] },
     ],
     resume: { }
   },
@@ -25,6 +25,8 @@ export default new Vuex.Store({
       state.resumeConfig.map((item) => {
         if(item.type === 'array'){
           Vue.set(state.resume, item.field, [])
+          console.log('set')
+          console.log(state.resume)
         }else{
           Vue.set(state.resume, item.field, {})
           item.keys.map((keys) => {
@@ -47,6 +49,13 @@ export default new Vuex.Store({
     },
     removeUser(state){
       state.user.id = ''
+    },
+    addResumeSubfield(state, {field}){
+      let empty = {}
+      state.resume[field].push(empty)
+      state.resumeConfig.filter((i) => i.field === field)[0].keys.map((key) => {
+        Vue.set(empty, key, '')
+      })
     }
   }
 })
