@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="signForm">
     <form @submit.prevent="signIn">
       <div class="row">
         <label>用户名</label>
@@ -45,3 +45,4 @@ export default {
   }
 }
 </script>
+

@@ -2,7 +2,7 @@
   <div class="wrapper-dia" v-show="visible">
     <div class="dialog">
       <header>{{title}}
-        <span class="close" @click="close" >x</span>
+        <span class="close" @click="close" >✖</span>
       </header>
       <main>
         <slot></slot>
@@ -43,6 +43,12 @@ export default {
         padding: 16px;
         display: flex;
         justify-content: space-between;
+        .close {
+          cursor: pointer;
+          &:hover {
+            color: red;
+          }
+        }
       }
       >main {
         padding: 16px;

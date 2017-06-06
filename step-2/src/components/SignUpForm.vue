@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="signForm">
     <form @submit.prevent="signUp">
       <div class="row">
         <label>用户名</label>
@@ -49,6 +49,37 @@ export default {
   }
 }
 </script>
-<style>
-
+<style lang="scss">
+  .signForm {
+    form {
+      input {
+        outline: none;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        min-height: 40px;
+        label {
+          width: 60px;
+        }
+      }
+      .actions {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 30px;
+        >input {
+          padding: 3px 10px;
+          border: none;
+          cursor: pointer;
+          color: #fff;
+          background: #299e68;
+          font-size: 14px;
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+  }
 </style>

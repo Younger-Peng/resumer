@@ -43,6 +43,7 @@ export default new Vuex.Store({
     },
     updateResume(state, {path, value}){
       objectPath.set(state.resume, path, value)
+      console.log('update...')
       localStorage.setItem('resume', JSON.stringify(state.resume))
     },
     setUser(state, payload){
@@ -57,6 +58,12 @@ export default new Vuex.Store({
       state.resumeConfig.filter((i) => i.field === field)[0].keys.map((key) => {
         Vue.set(empty, key, '')
       })
+    },
+    removeResumeSubfield(state, {field,i}){
+      console.log('final')
+      //为什么这么删删不掉？
+      // state.resume[field].splice(i,1)
+      // localStorage.setItem('resume', JSON.stringify(state.resume))
     },
     setResumeId(state, {id}){
       state.resume.id = id
@@ -104,6 +111,12 @@ export default new Vuex.Store({
           commit('setResume', {id: resume.id, ...resume.attributes})
         }
       })
+    },
+    removeResumeSubfield({state,commit}, {field,i}){
+      console.log(field,i)
+      state.resume[field].splice(i,1)
+
+      // localStorage.setItem('resume', JSON.stringify(state.resume))     
     }
   }
   

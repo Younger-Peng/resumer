@@ -34,7 +34,8 @@
     font-size: 16px;
   }
   .button{
-    width: 72px;
+    min-width: 72px;
+    padding: 0 6px;
     height: 32px;
     border: none;
     cursor: pointer;
