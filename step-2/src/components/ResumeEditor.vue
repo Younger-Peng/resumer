@@ -10,6 +10,11 @@
             <use :xlink:href="`#icon-${item.icon}`"></use>
           </svg>
         </li>
+        <li class="github" @click="gotoGithub()">
+          <svg class="icon">
+            <use xlink:href="#icon-github"></use>
+          </svg>
+        </li>
       </ol>
     </nav>
     <ol class="panels">
@@ -62,6 +67,9 @@
           value
         })
       },
+      gotoGithub(){
+        window.open('https://github.com/Younger-Peng/resumer/tree/master/step-2')
+      },
       addResumeSubfield(field){
         console.log(field)
         this.$store.commit('addResumeSubfield', {field})
@@ -99,6 +107,10 @@
           svg.icon{
             width: 24px;
             height: 24px;
+          }
+          &.github:hover {
+            background: white;
+            color: black;
           }
         }
       }

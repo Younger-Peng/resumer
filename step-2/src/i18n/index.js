@@ -39,7 +39,8 @@ export default {
         _: '联系方式',
         contact: '途径',
         content: '内容'
-      }
+      },
+      
     }
   }
 }
