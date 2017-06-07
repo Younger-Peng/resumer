@@ -122,6 +122,7 @@ export default {
     section[data-name="workHistory"],
     section[data-name="projects"],
     section[data-name="awards"]{
+      margin-top: 1rem;
       li + li {
         margin-top: 1em;
       }
