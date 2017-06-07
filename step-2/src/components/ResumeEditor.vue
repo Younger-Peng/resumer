@@ -105,8 +105,8 @@
             color: black;
           }
           svg.icon{
-            width: 24px;
-            height: 24px;
+            width: 24px !important;
+            height: 24px !important;
           }
           &.github:hover {
             background: white;
