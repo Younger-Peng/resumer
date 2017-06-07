@@ -14,6 +14,7 @@
           <svg class="icon">
             <use xlink:href="#icon-github"></use>
           </svg>
+          <div class="message">查看此项目源码</div>
         </li>
       </ol>
     </nav>
@@ -108,11 +109,34 @@
             width: 24px !important;
             height: 24px !important;
           }
-          &.github:hover {
-            background: white;
-            color: black;
+          &.github {
+            position: relative;
             cursor: pointer;
+            .message {
+              position: absolute;
+              display: none;
+              top: 0;
+              left: 100%;
+              width: 120px;
+              height: 100%;
+              font-size: 14px;
+              line-height: 48px;
+              text-align: center;
+              box-shadow: 3px 2px 2px rgba(0,0,0,0.3);
+              &:hover {
+                color: #E36049;
+                text-decoration: underline;
+              }
+            }
+            &:hover {
+              background: white;
+              color: black;
+              >.message {
+                display: block;
+              }
+            }
           }
+          
         }
       }
     }
