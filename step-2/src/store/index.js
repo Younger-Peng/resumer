@@ -44,13 +44,16 @@ export default new Vuex.Store({
     updateResume(state, {path, value}){
       objectPath.set(state.resume, path, value)
       console.log('update...')
-      localStorage.setItem('resume', JSON.stringify(state.resume))
+      // localStorage.setItem('resume', JSON.stringify(state.resume))
     },
     setUser(state, payload){
       Object.assign(state.user, payload)
+      
     },
     removeUser(state){
       state.user.id = ''
+      //必须让本地中存储的用户信息清空，不然别的用户永远无法设置ucl
+      state.resume.id = ''
     },
     addResumeSubfield(state, {field}){
       let empty = {}
@@ -80,6 +83,7 @@ export default new Vuex.Store({
       var Resume = AV.Object.extend('Resume')
       var resume = new Resume()
       if(state.resume.id){
+        debugger
         resume.id = state.resume.id
       }
       resume.set('profile', state.resume.profile)
@@ -90,11 +94,13 @@ export default new Vuex.Store({
       resume.set('contacts', state.resume.contacts)
       resume.set('owner_id', getAVUser().id)
 
-      var acl = new AV.ACL()
-      acl.setPublicReadAccess(true)
-      acl.setWriteAccess(AV.User.current(), true)
-
-      resume.setACL(acl)
+      // var acl = new AV.ACL()
+      // acl.setPublicReadAccess(true)
+      // window.acl = acl
+      // window.AV = AV
+      // window.resume = resume
+      // acl.setWriteAccess(AV.User.current(), true)
+      // resume.setACL(acl)
       resume.save().then(function(response){
         if(!state.resume.id){
           commit('setResumeId', {id: response.id})

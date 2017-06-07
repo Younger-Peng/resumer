@@ -55,6 +55,11 @@ export default {
       this.signUpDialogVisible = false
       this.signInDialogVisible = false
       this.$store.commit('setUser', user)
+      if(user.id){
+        this.$store.dispatch('fetchResume').then(() => {
+          this.restoreResumeFromLocalStorage()
+        })
+      }
     }
   }
 }
