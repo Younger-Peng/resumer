@@ -135,6 +135,7 @@ export default {
       }
     }
     section[data-name="contacts"]{
+      margin-top: 1rem;
       td:first{
         padding-right: 1em;
       }

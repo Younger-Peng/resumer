@@ -111,6 +111,7 @@
           &.github:hover {
             background: white;
             color: black;
+            cursor: pointer;
           }
         }
       }
