@@ -103,6 +103,10 @@ export default {
       margin-top: 2em;
     }
     p {
+      line-height: 1.5;
+      font-size: 14px;
+      color: #888;
+      font-family: '兰亭黑-简', 'Microsoft Yahei', 'sans-serif';
       white-space: pre-line;//合并连续空白符，保留换行符
     }
     section {
@@ -130,6 +134,9 @@ export default {
       }
       li {
         h3 {
+          color: #666;
+          font-family: '兰亭黑-简', 'Microsoft Yahei', 'sans-serif';
+          font-size: 18px;
           border-bottom: 1px dashed #3f81c1;
           padding-bottom: 0.3em;
           margin-bottom: 0.3em;
@@ -138,7 +145,14 @@ export default {
     }
     section[data-name="contacts"]{
       margin-top: 1rem;
-      td:first{
+      td:first-child{
+        color: #666;
+        line-height: 1.5;
+        padding-right: 1em;
+      }
+      td:last-child{
+        color: #888;
+        line-height: 1.5;
         padding-right: 1em;
       }
     }

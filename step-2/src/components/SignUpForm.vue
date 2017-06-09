@@ -69,12 +69,13 @@ export default {
         align-items: center;
         min-height: 30px;
         >input {
-          padding: 3px 10px;
+          padding: 4px 15px;
           border: none;
           cursor: pointer;
           color: #fff;
-          background: #299e68;
+          background: #3f81c1;
           font-size: 14px;
+          border-radius: 3px;
           &:hover {
             opacity: 0.9;
           }
