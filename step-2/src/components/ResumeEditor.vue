@@ -91,7 +91,7 @@
     overflow: auto;
     >nav{
       width: 80px;
-      background: black;
+      background: #3f81c1;
       color: white;
       >ol {
         >li {
@@ -101,13 +101,17 @@
           align-items: center;
           margin-top: 16px;
           margin-bottom: 16px;
+          cursor: pointer;
+          &:hover {
+            background: #4c98e2;
+          }
           &.active {
-            background: white;
-            color: black;
+            background: #fff;
+            color: #666;
           }
           svg.icon{
-            width: 24px !important;
-            height: 24px !important;
+            width: 24px ;
+            height: 24px ;
           }
           &.github {
             position: relative;
@@ -130,7 +134,7 @@
             }
             &:hover {
               background: white;
-              color: black;
+              color: #666;
               >.message {
                 display: block;
               }

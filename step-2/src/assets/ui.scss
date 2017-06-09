@@ -39,20 +39,19 @@
     height: 32px;
     border: none;
     cursor: pointer;
-    font-size: 18px;
-    background: #ddd;
-    color: #222;
+    font-size: 14px;
+    background: #3f81c1;
+    color: #fff;
     text-decoration: none;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+    border-radius: 3px;
+    outline: none;
     &:hover{
-      box-shadow: 1px 1px 1px hsla(0,0,0,0.5)
-    }
-    &.primary{
-      background: #02af5f;
-      color: white;
+      box-shadow: 0 0  3px hsla(0,0,0,0.25);
+      opacity: 0.9;
     }
     &.small {
       height: 24px;

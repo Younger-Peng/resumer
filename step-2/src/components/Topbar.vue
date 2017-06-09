@@ -1,10 +1,10 @@
 <template>
   <div id="topbar">
     <div class="wrapper">
-      <span class="logo">Resumer1</span>
+      <span class="logo"><img src="../assets/resume.svg"></span>
       <div class="actions">
         <div v-if="logined" class="userActions">
-          <span class="welcome">你好，{{user.username}}</span>
+          <span class="welcome">你好, {{user.username}}</span>
           <a class="button" href="#" @click.prevent="signOut">登出</a>
         </div>
         <div v-else class="userActions">
@@ -80,10 +80,16 @@ export default {
       justify-content: space-between;
       align-items: center;
       padding: 0 16px;
+      .welcome {
+        padding-right: 10px;
+      }
     }
     .logo{
-      font-size: 24px;
-      color: #000000;
+      padding-left: 15px;
+      img {
+        width: 50px;
+        color: red;
+      }
     }
   }
 

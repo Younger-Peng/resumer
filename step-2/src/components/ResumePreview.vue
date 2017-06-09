@@ -107,10 +107,12 @@ export default {
     }
     section {
       > h2:first-child {
-        background: #ddd;
+        background: #f3f3f3;
         display: inline-block;
         padding: 0.2em;
         margin-bottom: 0.5em;
+        border-radius: 3px;
+        color: #666;
       }
     }
     section[data-name="profile"] {
@@ -128,7 +130,7 @@ export default {
       }
       li {
         h3 {
-          border-bottom: 1px solid #999;
+          border-bottom: 1px dashed #3f81c1;
           padding-bottom: 0.3em;
           margin-bottom: 0.3em;
         }
